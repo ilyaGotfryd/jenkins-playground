@@ -12,8 +12,10 @@ pipeline{
 			}
 		}
 		stage('test'){
-			sh 'py.test'
-			sh ' ls -lah'
+			steps{
+				sh 'py.test'
+				sh ' ls -lah'
+			}
 		}
 	}
 	post{
