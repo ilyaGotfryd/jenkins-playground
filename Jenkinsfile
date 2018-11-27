@@ -11,5 +11,12 @@ pipeline{
 				'''
 			}
 		}
+		stage('test'){
+			sh 'py.test'
+			sh ' ls -lah'
+		}
+	}
+	post{
+		junit 'build/reports/**/*.xml'
 	}
 }
