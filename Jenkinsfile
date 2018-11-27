@@ -1,7 +1,7 @@
 pipeline{
 	agent { docker { image 'python:3.5.1' } }
 	stages {
-		stage('build') {
+		stage('Build') {
 			steps {
 				sh 'python --version'
 				sh 'echo "Hello World"'
@@ -11,7 +11,7 @@ pipeline{
 				'''
 			}
 		}
-		stage('test'){
+		stage('Test'){
 			steps{
 				sh 'py.test'
 				sh ' ls -lah'
@@ -19,6 +19,8 @@ pipeline{
 		}
 	}
 	post{
-		junit 'build/reports/**/*.xml'
+		always{
+			junit 'build/reports/**/*.xml'
+		}
 	}
 }
