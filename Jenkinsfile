@@ -14,7 +14,7 @@ pipeline{
 		}
 		stage('Test'){
 			steps{
-				sh 'py.test'
+				sh 'py.test --junitxml results.xml'
 				sh ' ls -lah'
 			}
 		}
