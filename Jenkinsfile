@@ -4,6 +4,7 @@ pipeline{
 		stage('Build') {
 			steps {
 				sh 'python --version'
+				sh 'pip install -r requirements.txt'
 				sh 'echo "Hello World"'
 				sh '''
 					echo "Multiple shell steps work too"
