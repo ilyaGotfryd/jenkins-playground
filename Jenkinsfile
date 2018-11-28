@@ -22,7 +22,7 @@ pipeline{
 	post{
 		always{
 			sh 'ls -alh'
-			junit '/var/jenkins_home/workspace/nkins-playgtound-pipeline_master/results.xml'
+			junit './results.xml'
 		}
 	}
 }
